@@ -1,0 +1,474 @@
+@font-face {
+    font-family: CormorantInfant;
+    src: url("fonts/CormorantInfant-Light.ttf") format("opentype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: CormorantInfant;
+    src: url("fonts/CormorantInfant-Regular.ttf") format("opentype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: CormorantInfant;
+    src: url("fonts/CormorantInfant-Medium.ttf") format("opentype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: CormorantInfant;
+    src: url("fonts/CormorantInfant-SemiBold.ttf") format("opentype");
+    font-weight: 600;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: CormorantInfant;
+    user-select: none;
+}
+
+
+html {
+    font-size: 25px;
+}
+
+h1 {
+    font-size: 8rem;
+    line-height: 8rem;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 400;
+}
+
+.header_content_container {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.header_content_container video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
+}
+
+.header_top {
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 2;
+    transition: 0.7s;
+}
+
+.header_bottom {
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: #fff;
+    z-index: 2;
+    transition: 0.7s;
+}
+
+.mobile_header_img{
+    display: none;
+}
+
+.header_title {
+    position: absolute;
+    top: 40%;
+    text-align: center;
+    width: 100%;
+    color: #787878;
+    line-height: 242px;
+    letter-spacing: 0.665em;
+    z-index: 3;
+    transition: 0.7s;
+    cursor: default;
+    user-select: none;
+}
+
+.header_content_container:hover .header_top {
+    transform: translateY(-90%);
+}
+
+.header_content_container:hover .header_bottom {
+    transform: translateY(90%);
+}
+
+.header_button {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 40px 130px;
+    border-radius: 20px;
+    background-color: #8D4545;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    z-index: 3;
+    border: none;
+    font-weight: 300;
+    transition: 0.5s;
+}
+
+
+.header_button::before {
+    content: url(img/icons/left.png);
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: -80px;
+}
+
+.header_button::after {
+    content: url(img/icons/right.png);
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: -80px;
+}
+
+.header_button:hover {
+    background-color: #743838;
+    transform: translateX(-50%) scale(1.1);
+}
+
+.nav_menu {
+    position: fixed;
+    height: 100%;
+    width: 130px;
+    top: 0;
+    right: 0;
+    background: #fff;
+    z-index: 444;
+    padding: 15px;
+    box-shadow: -5px 0px 20px rgba(0, 0, 0, 0.25);
+}
+
+.nav_items {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav_item {
+    display: flex;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.nav_item::before {
+    width: 0px;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    background-color: #8D4545;
+    color: #fff;
+    transform: translateY(-50%);
+    overflow: hidden;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.nav_item:nth-of-type(1)::before {
+    content: 'Главная';
+}
+
+.nav_item:nth-of-type(2)::before {
+    content: "История";
+}
+
+.nav_item:nth-of-type(3)::before {
+    content: "Этапы";
+}
+
+.nav_item:nth-of-type(4)::before {
+    content: "Модели";
+}
+
+.nav_item:hover::before {
+    border: 1px solid black;
+    width: 100px;
+    padding: 14px 55px;
+    transform: translateY(-50%);
+    left: -230%;
+}
+
+.nav_item:hover img {
+    background: #8D4545;
+    transform: scale(0.9);
+}
+
+.nav_item img {
+    transition: 0.4s;
+    user-select: none;
+}
+
+
+
+.history_container {
+    max-width: 1400px;
+    min-height: 700px;
+    width: 100%;
+    border: 1px solid #000000;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.history_left {
+    width: 50%;
+}
+
+.history_right {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+}
+
+.section_title::first-letter {
+    font-size: 4rem;
+}
+
+.section_title {
+    margin-bottom: 50px;
+}
+
+.history_text {
+    max-width: 500px;
+    color: #848484;
+}
+
+.history_text::first-line {
+    font-weight: 700;
+    color: #000000;
+}
+
+.history_images {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 2100px;
+    top: 0;
+    left: 0;
+    animation: car_slider 20s linear infinite;
+}
+
+.history {
+    padding: 100px 0;
+}
+
+
+
+.dates_container{
+    max-width: 1400px;
+    width: 100%;
+    height: 280px;
+    border: 1px solid #000000;
+    padding: 20px 50px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.dates_list_container{
+    width: 100%;
+    height: 3rem;
+    line-height: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.dates_list{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 95%;
+    list-style: none;
+    text-align: left;
+    animation: txt_slider 15s linear infinite;
+}
+
+.dates_list_item{
+    font-size: 2rem;
+    line-height: 2rem;
+    padding-bottom: 10px;
+}
+
+
+.dates_list_item span::before {
+    content: url(img/icons/porsche-logo.png);
+    height: 100%;
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+    padding-right: 10px;
+}
+
+/* анимация для history_img 
+и некст блок*/
+
+/* transform translate X */
+
+
+
+
+
+
+.models {
+    padding: 100px 0;
+}
+
+.models_container {
+    max-width: 1400px;
+    width: 100%;
+    border: 1px solid #000000;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.models_list {
+    list-style: none;
+    width: 100%;
+}
+
+.models_item {
+    width: fit-content;
+    position: relative;
+}
+
+.models_item:nth-of-type(2n-1) {
+    margin-left: auto;
+}
+
+.models_item_desc p {
+    color: #848484;
+}
+
+.models_item_desc p::first-letter {
+    color: #000000;
+    font-weight: 700;
+}
+
+.models_item_desc {
+    position: absolute;
+    background: #fff;
+    max-width: 700px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    padding: 45px 60px;
+    top: 50%;
+    cursor: default;
+    user-select: none;
+}
+
+.models_item:nth-of-type(2n-1) .models_item_desc {
+    left: 0;
+    transform: translate(-70%, -50%);
+}
+
+.models_item:nth-of-type(2n) .models_item_desc {
+    right: 0;
+    transform: translate(70%, -50%);
+}
+
+.models_item_desc::before {
+    content: "";
+    width: 50%;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #000000;
+    transition: 0.3s;
+}
+
+.models_item_desc::after {
+    content: "";
+    width: 50%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transition: 0.3s;
+}
+
+.models_item_desc:hover::before,
+.models_item_desc:hover::after {
+    width: 100%;
+}
+
+.models_item_desc h3 {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.section_title {
+    text-align: center;
+    user-select: none;
+}
+
+
+.footer_container{
+    max-width: 1400px;
+    width: 100%;
+    border: 1px solid #000000;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 540px;
+}
+
+.footer{
+    padding: 100px 0;
+}
+
+
+
+
+@keyframes car_slider {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes txt_slider {
+    0% {
+        transform: translate(-50%, 0);
+    }
+
+    100% {
+        transform: translate(-50%, calc(-14rem - 70px));
+    }
+}
